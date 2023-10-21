@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>О разработчике</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #333;
+            text-align: center;
+        }
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        .developer {
+            position: relative;
+            text-align: center;
+            font-size: 36px;
+            padding: 10px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .skill-bar {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .skill {
+            width: 100%;
+            background-color: #3498db;
+            color: black;
+            text-align: right;
+            padding: 5px;
+            position: relative;
+            margin: 10px 0;
+        }
+        .skill-bar > .skill:first-child {
+            background-color: #e74c3c;
+        }
+        nav a:hover {
+            color: lightblue;
+            background-color: #333;
+            border-radius: 5px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        img {
+            display: block;
+            margin: 0 auto;
+            border: 3px solid #3498db;
+            border-radius: 50%;
+        }
+        .skill-title {
+            font-weight: bold;
+            font-size: 20px;
+            margin-left: 160px;
+        }
+        .container {
+            max-width: 1900px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <nav>
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="developer.html">О разработчике</a></li>
+            <li><a href="history.html">История города</a></li>
+            <li><a href="infrastructure.html">Инфраструктура города</a></li>
+            <li><a href="culture.html">Культура и искусство</a></li>
+            <li><a href="contact.html">Обратная связь</a></li>
+        </ul>
+    </nav>
+    <header>
+    <h1 class="developer">Разработчик сайта города Снежное Забелин З. А. ИВТ-5</h1>
+    </header>
+    <main>
+    <img src="Itsme.jpg" alt="Моя фотография" width="20%" height="20%">
+    <p>Обо мне: Я студент физико-технического факультета специальности информатика и вычислительная техника на 2-м ускоренном курсе Донецкого государственного университета. Проживаю в городе Горловка и окончил ГПОУ "Горловский техникум ГОУ ВПО ДОННУ" по специальности "Программирование в компьютерных системах."</p>
+    <h2 class="skill-title">Навыки владения:</h2>
+    <div class="skill-bar">
+        <div class="skill" style="width: 20%;">HTML 20%</div>
+    </div>
+    <div class="skill-bar">
+        <div class="skill" style="width: 10%;">CSS 10%</div>
+    </div>
+    <div class="skill-bar">
+        <div class="skill" style="width: 15%;">JavaScript 15%</div>
+    </div>
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2023 Снежное</p>
+</footer>
+</body>
+</html>

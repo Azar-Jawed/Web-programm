@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <title>Инфраструктура города</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: lightblue;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            font-size: 16px;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            background-color: #333;
+            text-align: center;
+        }
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+        nav a:hover {
+            color: lightblue;
+            background-color: #333;
+            border-radius: 5px;
+            padding: 5px 10px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        .infrastrykter {
+            position: relative;
+            text-align: center;
+            font-size: 36px;
+            padding: 10px;
+            color: #333;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        .infrastructure-info {
+            margin: 20px;
+            padding: 20px;
+            background-color: #4aeffd;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .container {
+            max-width: 1900px;
+            margin: 0 auto;
+            padding: 5px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        .infrastructure-info .map {
+            width: 100%;
+            height: 300px;
+            background-color: whitesmoke;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .settlement {
+            cursor: pointer;
+            text-decoration: underline;
+            color: #591b03;
+            display: block;
+            margin-bottom: 5px;
+            position: relative;
+        }
+        .settlement::before {
+            content: "\2022";
+            position: absolute;
+            left: -15px;
+        }
+
+        .settlement-info {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+    </style>
+</head>
+<body>
+<div class="container">
+<nav>
+    <ul>
+        <li><a href="index.html">Главная</a></li>
+        <li><a href="developer.html">О разработчике</a></li>
+        <li><a href="history.html">История города</a></li>
+        <li><a href="infrastructure.html">Инфраструктура города</a></li>
+        <li><a href="culture.html">Культура и искусство</a></li>
+        <li><a href="contact.html">Обратная связь</a></li>
+    </ul>
+</nav>
+    <header>
+<h1 class="infrastrykter">Инфраструктура города Снежное</h1>
+    </header>
+    <main>
+<div class="infrastructure-info">
+    <section>
+        <h2>Географические координаты</h2>
+    <p>Снежное находится приблизительно на 48° северной широты и 38° восточной долготы.</p>
+    </section><section>
+    <h2>Расположение</h2>
+    <p>Город расположен в восточной части Донецкой области и находится вблизи Ростовской области.</p>
+</section><section>
+    <h2>Рельеф</h2>
+    <p>Рельеф вокруг Снежного характеризуется как плоский и низинный, что типично для данной части Донецкой Народной Республике. В окрестностях города можно найти поля, леса и небольшие водоемы.</p>
+</section><section>
+    <h2>Реки</h2>
+    <p>Вблизи Снежного течет река Северский Донец. Эта река является важным водным путем и имеет значительное значение для региона.</p>
+</section><section>
+    <h2>Климат</h2>
+    <p>Город находится в умеренном континентальном климате, с холодными зимами и теплыми летами. Зимы в Снежном обычно прохладные, с обильными снегопадами, в то время как лето теплое и солнечное.</p>
+</section><section>
+    <h2>Ближайшие города</h2>
+    <p>Снежное находится в непосредственной близости от таких городов, как Донецк и Луганск, которые также находятся в Донецкой области.</p>
+</section><section>
+    <h2>Границы</h2>
+    <p>Город ограничивается смежными районами и посёлками, которые могут варьироваться со временем в зависимости от административных изменений.</p>
+</section><section>
+    <h2>Снежное на карте</h2>
+    <div class="map" id="map" data-lat="48.019464" data-lon="38.760463"></div>
+    <script src="https://api-maps.yandex.ru/2.1/?apikey=3ea1204d-acd8-4627-b17d-cb0b4ed26b2a&lang=ru_RU" type="text/javascript"></script>
+    <script>
+        ymaps.ready(init);
+        function init() {
+            var lat = document.getElementById("map").getAttribute("data-lat");
+            var lon = document.getElementById("map").getAttribute("data-lon");
+
+            var map = new ymaps.Map("map", {
+                center: [lat, lon],
+                zoom: 12
+            });
+        }
+    </script>
+</section><section>
+    <h2>Административное деление города</h2>
+    <p>
+        <span class="settlement" id="Andreevka">Андреевский поселковый совет</span>
+        <span class="settlement" id="Brazhino">пгт Бражино</span>
+        <span class="settlement" id="Gornyatskiy">Горняцкий поселковый совет</span>
+        <span class="settlement" id="Zalesnenskiy">Залесненский поселковый совет</span>
+        <span class="settlement" id="Limanchuk">пгт Лиманчук</span>
+        <span class="settlement" id="Mochalino">Мочалино</span>
+        <span class="settlement" id="Nikiforovo">пгт Никифорово</span>
+        <span class="settlement" id="Orekhovo">пгт Орехово</span>
+        <span class="settlement" id="Pervomayskoeposel">Первомайский поселковый совет</span>
+        <span class="settlement" id="Pervomayskoe">пгт Первомайское</span>
+        <span class="settlement" id="Pobeda">пгт Победа</span>
+        <span class="settlement" id="Severnyy">пгт Северный поселковый совет</span>
+        <span class="settlement" id="Sukhovskoe">Суховское</span>
+    </p>
+    <div class="settlement-info" id="Andreevka-info">
+        <h2>Андреевский поселковый совет</h2>
+        <p>Андреевка — посёлок городского типа в Донецкой области, административный центр Андреевского поселкового совета. С населением около 2,135 человек (на начало 2019 года). Расположен в междуречье рек Глухая и Миуса.</p>
+    </div>
+    <div class="settlement-info" id="Brazhino-info">
+        <h2>пгт Бражино</h2>
+        <p>Бражино — посёлок городского типа в Донецкой области. Население по переписи 2001 года составляло 358 человек. Расположен недалеко от города Снежное и других населенных пунктов.</p>
+    </div>
+    <div class="settlement-info" id="Gornyatskiy-info">
+    <h2>Горняцкий поселковый совет</h2>
+        <p>Горняцкое — посёлок городского типа в Донецкой области. Население по переписи 2001 года составляло 1,290 человек.</p>
+</div>
+<div class="settlement-info" id="Zalesnenskiy-info">
+    <h2>Залесненский поселковый совет</h2>
+    <p>Залесное — посёлок городского типа в Донецкой области. Население по переписи 2001 года составляло 2,705 человек. Город формировался в середине 20-го века в результате развития шахт и был официально признан посёлком городского типа в 1957 году.</p>
+</div>
+<div class="settlement-info" id="Limanchuk-info">
+    <h2>пгт Лиманчук</h2>
+    <p>Лиманчук — посёлок городского типа в Донецкой области. Население по переписи 2001 года составляло 970 человек. Город расположен вблизи границы Донецкой и Луганской областей.</p>
+</div>
+<div class="settlement-info" id="Mochalino-info">
+    <h2>Мочалино</h2>
+    <p>Мочалино — посёлок в Донецкой области. Население по переписи 2001 года составляло 659 человек. Расположен вблизи города Торез и имеет железнодорожную станцию на линии Софьино-Бродская — Торез. Орган местного самоуправления — Северный поселковый совет.</p>
+</div>
+<div class="settlement-info" id="Nikiforovo-info">
+    <h2>пгт Никифорово</h2>
+    <p>Никифорово — посёлок городского типа в Донецкой области. Население по переписи 2001 года составляло 970 человек. Город расположен на границе Донецкой и Луганской областей.</p>
+</div>
+<div class="settlement-info" id="Orekhovo-info">
+    <h2>пгт Орехово</h2>
+    <p>Орехово — село в Донецкой области. Население по переписи 2001 года составляет 371 человек. Расположено близ города Макеевка и имеет разнообразное языковое население, включая русский и украинский языки.</p>
+</div>
+<div class="settlement-info" id="Pervomayskoeposel-info">
+    <h2>Первомайский поселковый совет</h2>
+    <p>Первомайский — посёлок городского типа в Донецкой области. Основан в 1910 году и получил статус поселка городского типа в 1938 году. Население по состоянию на 2013 год составляло 2837 человек. Город назван в честь Первомая, праздника весны и труда.</p>
+</div>
+<div class="settlement-info" id="Pervomayskoe-info">
+    <h2>пгт Первомайское</h2>
+    <p>Первомайское — посёлок городского типа в Донецкой области. Город назван в честь Первомая, праздника весны и труда. Население по переписи 2001 года составляло 634 человека.</p>
+</div>
+<div class="settlement-info" id="Pobeda-info">
+    <h2>пгт Победа</h2>
+    <p>Победа — посёлок городского типа в Донецкой области. Расположен на левом берегу реки Ольховчик. Население по переписи 2001 года составляло 565 человек.</p>
+</div>
+<div class="settlement-info" id="Severnyy-info">
+    <h2>пгт Северный поселковый совет</h2>
+    <p>Северное — посёлок городского типа в Донецкой области. Расположен с истоком реки Глухая. Население по переписи 2001 года составляло 11,314 человек.</p>
+</div>
+<div class="settlement-info" id="Sukhovskoe-info">
+    <h2>Суховское</h2>
+    <p>Суховское — посёлок в Снежнянском городском совете Донецкой области. Население по переписи 2001 года составляло 176 человек.</p>
+</div>
+    <script>
+                const settlements = document.querySelectorAll('.settlement');
+        const settlementInfoBlocks = document.querySelectorAll('.settlement-info');
+        settlements.forEach((settlement, index) => {
+            settlement.addEventListener('mouseover', () => {
+                settlementInfoBlocks[index].style.display = 'block';
+            });
+            settlement.addEventListener('mouseout', () => {
+                settlementInfoBlocks[index].style.display = 'none';
+            });
+        });
+    </script>
+</section><section>
+<h2>Общественный транспорт города</h2>
+
+    <p>Городские автобусные маршруты:</p>
+    <ol>
+        <li>"1 «АС городская — ш. Северная»</li>
+        <li>"2 «АС городская — ш. Восход»</li>
+        <li>"3 «АС городская — ш. Суховская»</li>
+        <li>"4-А «АС междугородняя — ЦОФ Киселёва» (ч/з ул. 250 Лет Донбасса, Фрунзе)</li>
+        <li>"6 «АС городская — п. Андреевка»</li>
+        <li>"7 «АС городская — п. Весёлое»</li>
+        <li>"8 «АС городская — ш. 104»</li>
+        <li>"9 «АС городская — ш. 1»</li>
+        <li>"10 "АС междугородняя — ш. 2 — п. Победа</li>
+        <li>"11 «Центр. рынок — АС городская — п. Первомайский»</li>
+        <li>"14 «АС городская — Центр. рынок — п. Ремовка»</li>
+        <li>"14-А «АС междугородняя — АС городская — п. Ремовка»</li>
+        <li>"15 «АС междугородняя — ш. 8-9»</li>
+        <li>"17 «АС городская — ЦГБ — ЖДВ — АС междугородняя»</li>
+        <li>"Снежное-Торез (кольцевой) «АС городская — АС Торез — ш. Заря — АС междугородняя — АС городская»</li>
+    </ol>
+    <p>Железнодорожный транспорт представлен двумя действующими вокзалами и двумя действующими остановками поезда:</p>
+    <ol>
+        <li>Железнодорожная станция Софьино-Бродская (17 км)</li>
+        <li>о.п. 15 км</li>
+        <li>Мочалинский (12 км)</li>
+        <li>о.п. 9 км</li>
+    </ol>
+</section>
+</div>
+    </main>
+</div>
+
+<footer>
+    <p>&copy; 2023 Снежное</p>
+</footer>
+</body>
+</html>
